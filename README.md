@@ -9,10 +9,10 @@ Then simply run the installer. It will install by default to your user applicati
 <pre> ```bash ./GoldenLauncherInstaller.sh ``` </pre>
 ## Using
 If you skipped the installing section, using it portably is trivial:
-Just download the "source" and modify permissions: <pre ```bash chmod +x GoldenLauncherInstaller.sh ``` </pre>
+Just download the "source" and modify permissions: <pre> ```bash chmod +x GoldenLauncherInstaller.sh ``` </pre>
 Then run the program:<pre> ```bash ./GoldenLauncher.sh ``` </pre>
 
-If you installed it, it's much easier; it adds a symlink so you can just <pre> ```bash goldenlauncher ``` </pre> instead.
+If you installed it, it's much easier; it adds a symlink so you can just ```bash goldenlauncher ``` instead.
 
 It also has some arguments:
 
