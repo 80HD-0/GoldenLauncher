@@ -3,7 +3,7 @@ An open-source portable (and installable) Minecraft beta launcher.
 ## Installing
 Though GoldenLauncher is portable, it can be conveniently installed to the system. It's rather simple.
 First, you will need to give the installer proper run permissions: <pre> ```bash chmod +x GoldenLauncherInstaller.sh ``` </pre>
-Then simply run the installer. It will install by default to your user application folder () but you can use the -d argument to choose a different directory (use --help or -h to see more)
+Then simply run the installer. It will install by default to your user application folder (~/.local/bin) or globally (/usr/bin) if you use sudo, but you can use the -d argument to choose a different directory (use --help or -h to see more)
 <pre> ```bash ./GoldenLauncherInstaller.sh ``` </pre>
 ## Using
 If you skipped the installing section, using it portably is trivial:
