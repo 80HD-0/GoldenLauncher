@@ -1,6 +1,10 @@
 #!/bin/bash
 
-INSTALLDIR="$HOME/.local/bin/GoldenLauncher"
+if [ "$(id -u)" -eq 0 ]; then
+  INSTALLDIR="/usr/local/bin/GoldenLauncher"
+else
+  INSTALLDIR="$HOME/.local/bin/GoldenLauncher"
+fi
 
 # Help message
 show_help() {
@@ -42,7 +46,14 @@ cp GoldenLauncher.sh "$INSTALLDIR"
 chmod +x "$INSTALLDIR/GoldenLauncher.sh"
 cp icon.png "$INSTALLDIR"
 
-cat > "$HOME/.local/share/applications/GoldenLauncher.desktop" <<EOF
+if [ "$(id -u)" -eq 0 ]; then
+  LINKDIR="/usr/share/applications"
+else
+  LINKDIR="$HOME/.local/share/applications"
+fi
+
+
+cat > "$LINKDIR/GoldenLauncher.desktop" <<EOF
 [Desktop Entry]
 Name=GoldenLauncher
 Comment=GoldenLauncher 0.1 Beta Minecraft Launcher
@@ -52,7 +63,7 @@ Terminal=false
 Type=Application
 Categories=Game;
 EOF
-cat > "$HOME/.local/share/applications/GoldenLauncherUninstaller.desktop" <<EOF
+cat > "$LINKDIR/GoldenLauncherUninstaller.desktop" <<EOF
 [Desktop Entry]
 Name=Uninstall GoldenLauncher
 Comment=Uninstall GoldenLauncher 0.1
